@@ -2,9 +2,9 @@
   "name": "vue-text-selection",
   "version": "0.0.1",
   "description": "a vue directive of text selection",
-  "main": "index.js",
+  "main": "dist/v-selection.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -15,10 +15,17 @@
     "text-selection",
     "directive"
   ],
-  "author": "https://github.com/s010s",
+  "author": "Leon Leung <mrleonleung@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/s010s/vue-text-selection/issues"
   },
-  "homepage": "https://github.com/s010s/vue-text-selection#readme"
+  "homepage": "https://github.com/s010s/vue-text-selection#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-preset-env": "^1.6.1",
+    "webpack": "^3.8.1"
+  }
 }
