@@ -1,0 +1,24 @@
+{
+  "name": "vue-text-selection",
+  "version": "0.0.1",
+  "description": "a vue directive of text selection",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/s010s/vue-text-selection.git"
+  },
+  "keywords": [
+    "vue",
+    "text-selection",
+    "directive"
+  ],
+  "author": "https://github.com/s010s",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/s010s/vue-text-selection/issues"
+  },
+  "homepage": "https://github.com/s010s/vue-text-selection#readme"
+}
