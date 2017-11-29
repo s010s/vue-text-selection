@@ -25,10 +25,11 @@
 
     textarea {
       width: 50%;
-      height: 100%;
+      height: 50%;
       position: absolute;
       right: 0;
-      bottom: 0;
+      top: 50%;
+      transform: translate3d(0,-50%,0);
       font-size: 16px;
     }
 
@@ -51,17 +52,16 @@
       <p>And strangle Reason in his seat.</p>
       <p>My loves leap through the future's fence</p>
       <p>To dance with dream-enfranchised feet.</p>
-      <div class="select-box" v-selection.fix="{getSelection:getSelection1}">
-        Select the text!
-        <span>---span---</span>
-        <div>another line</div>
-      </div>
+      <div class="select-box" v-selection.fix="{getSelection:getSelection1}" v-if="show1">
+        Select the text!<span>---span---</span>
+        <div>another line</div></div>
       <p>In me the cave-man clasps the seer,</p>
       <p>And garlanded Apollo goes</p>
       <p>Chanting to Abraham's deaf ear.</p>
       <p>In me the tiger sniffs the rose.</p>
       <p>Look in my heart, kind friends, and tremble,</p>
       <p>Since there your elements assemble.</p>
+      <button @click="show1 = !show1">toggle the select-box</button>
       <textarea v-model="fixRangeStr1"></textarea>
     </div>
     <div class="box">
@@ -72,9 +72,8 @@
       <p>And strangle Reason in his seat.</p>
       <p>My loves leap through the future's fence</p>
       <p>To dance with dream-enfranchised feet.</p>
-      <div class="select-box" v-selection="{getSelection:getSelection2}">
-        Select the text!
-        <span>---span---</span>
+      <div class="select-box" v-selection="{getSelection:getSelection2}" v-if="show2">
+        Select the text!<span>---span---</span>
         <div>another line</div>
       </div>
       <p>In me the cave-man clasps the seer,</p>
@@ -83,6 +82,7 @@
       <p>In me the tiger sniffs the rose.</p>
       <p>Look in my heart, kind friends, and tremble,</p>
       <p>Since there your elements assemble.</p>
+      <button @click="show2 = !show2">toggle the select-box</button>
       <textarea v-model="fixRangeStr2"></textarea>
     </div>
   </div>
@@ -94,7 +94,9 @@
       },
       data: {
         fixRangeStr1: '',
-        fixRangeStr2: ''
+        fixRangeStr2: '',
+        show1: true,
+        show2: true
       },
       methods: {
         getSelection1: function (fixRangeStr, rangeStr) {
