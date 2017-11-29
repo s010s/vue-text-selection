@@ -10,31 +10,31 @@ const vueSelection = {
         document.body.removeEventListener('mouseup', handleMouseUp)
         return
       }
-      var selection = handleRange()
-      selection.fixRangeStr && binding.value.getSelection && binding.value.getSelection(selection.fixRangeStr, selection.rangeStr)
+      var rtn = handleRange()
+      rtn.fixStr && binding.value.getSelection && binding.value.getSelection(rtn.fixStr, rtn.allStr)
     }
     /**
-     * handle mousedown event on el
+     * handle range fix
      */
     function handleRange() {
       var selection = window.getSelection()
       var rtn = {
-        rangeStr: '',
-        fixRangeStr: ''
+        allStr: '',
+        fixStr: ''
       }
       if (selection.rangeCount > 0) {
         var range = selection.getRangeAt(0)
         var region = document.createRange()
         region.selectNode(el)
         if (CheckIntersection(range, region)) {
-          rtn.rangeStr = range.toString()
+          rtn.allStr = range.toString()
           if (binding.modifiers.fix) {
             fixRange(range, region)
-            rtn.fixRangeStr = range.toString()
+            rtn.fixStr = range.toString()
           } else {
             var copyRange = range.cloneRange()
             fixRange(copyRange, region)
-            rtn.fixRangeStr = copyRange.toString()
+            rtn.fixStr = copyRange.toString()
             copyRange.detach()
           }
         }
