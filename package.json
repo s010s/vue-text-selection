@@ -1,6 +1,6 @@
 {
   "name": "vue-text-selection",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a vue directive of text selection",
   "main": "dist/v-selection.js",
   "scripts": {
