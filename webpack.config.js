@@ -5,7 +5,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'v-selection.js',
-        library: 'vueSelection',
+        library: 'selection',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },

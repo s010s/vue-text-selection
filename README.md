@@ -18,15 +18,15 @@ npm install vue-selectable  --save
 ## Usage
 #### NPM
 ```js
-import vueSelection from 'vue-text-selection';
+import selection from 'vue-text-selection';
 
 // Register a global custom directive called v-selection
-Vue.directive('v-selection', vueSelection);
+Vue.directive('selection', selection);
 
 // Register the directive locally instead
 new Vue({
   el: '#app',
-  directives: { vueSelection },
+  directives: { selection },
   methods:{
     getSelection: function(fixStr, allStr){
       // fixStr - the string that fix the boudary 
@@ -41,7 +41,7 @@ new Vue({
 new Vue({
   el: '#app',
   directives: { 
-    selection: vueSelection.default
+    selection: selection.default
   },
   methods:{
     getSelection: function(fixStr, allStr){

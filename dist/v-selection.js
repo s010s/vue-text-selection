@@ -2,11 +2,11 @@
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
 	else if(typeof define === 'function' && define.amd)
-		define("vueSelection", [], factory);
+		define("selection", [], factory);
 	else if(typeof exports === 'object')
-		exports["vueSelection"] = factory();
+		exports["selection"] = factory();
 	else
-		root["vueSelection"] = factory();
+		root["selection"] = factory();
 })(this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
