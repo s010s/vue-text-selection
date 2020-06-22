@@ -1,6 +1,10 @@
 const vueSelection = {
-  bind(el, binding, vnode) {
-    document.body.addEventListener('mouseup', handleMouseUp)
+  unbind(_,binding){
+    document.body.removeEventListener('mouseup', binding.def.handler)
+  },
+  bind(el, binding) {
+    binding.def.handler = handleMouseUp
+    document.body.addEventListener('mouseup', binding.def.handler)
     
     /**
      * handle mouseup event on body
