@@ -7,7 +7,7 @@
 		exports["selection"] = factory();
 	else
 		root["selection"] = factory();
-})(this, function() {
+})(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -84,8 +84,12 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var vueSelection = {
-  bind: function bind(el, binding, vnode) {
-    document.body.addEventListener('mouseup', handleMouseUp);
+  unbind: function unbind(_, binding) {
+    document.body.removeEventListener('mouseup', binding.def.handler);
+  },
+  bind: function bind(el, binding) {
+    binding.def.handler = handleMouseUp;
+    document.body.addEventListener('mouseup', binding.def.handler);
 
     /**
      * handle mouseup event on body
